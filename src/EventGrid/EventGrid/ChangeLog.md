@@ -18,6 +18,7 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< Updated upstream
 * Updated to use the 2021-12-01 API version.
 * Added new features:
     - System topic
@@ -35,6 +36,15 @@
 		- Add new optional parameters to support delivery attribute mapping.
 		- Add new optional parameters to support storage queue message ttl.
     
+=======
+* Upgraded API version to 2021-12-01
+* Added new cmdlets for `SystemTopic`, `SystemTopicEventSubscription`, `GridSystemTopicEventSubscriptionDeliveryAttribute` and `FullUrlForSystemTopicEventSubscription`
+* Added identity type support to `GridTopic` cmdlets
+* Added `-AdvancedFilteringOnArray`, `-DeliveryAttributeMapping`, `-StorageQueueMessageTtl` to `New-AzEventGridSubscription`
+* Added `-DisableLocalAuth`, `-AutoCreateTopicWithFirstSubscription`, `AutoDeleteTopicWithLastSubscription`, and identity support to `New-AzEventGridDomain`
+
+
+>>>>>>> Stashed changes
 ## Version 1.3.0
 * Updated to use the 2020-06-01 API version.
 * Added new features:
