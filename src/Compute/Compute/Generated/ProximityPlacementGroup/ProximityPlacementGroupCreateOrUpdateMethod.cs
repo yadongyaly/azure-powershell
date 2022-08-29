@@ -109,7 +109,7 @@ namespace Microsoft.Azure.Commands.Compute.Automation
 
         [Parameter(
             Mandatory = false,
-            HelpMessage = "Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.",
+            HelpMessage = "Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created.",
             ValueFromPipelineByPropertyName = true)]
         public string[] Zone { get; set; }
 

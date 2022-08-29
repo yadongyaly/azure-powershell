@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Zone
-Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the  proximity placement group can be created.
+Specifies the Availability Zone where virtual machine, virtual machine scale set or availability set associated with the proximity placement group can be created.
 
 ```yaml
 Type: System.String[]
