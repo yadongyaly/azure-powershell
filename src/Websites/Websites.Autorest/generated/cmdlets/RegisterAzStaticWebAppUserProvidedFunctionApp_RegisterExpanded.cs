@@ -33,6 +33,9 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         /// </summary>
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
+        /// <summary>Static Site User Provided Function App ARM resource.</summary>
+        private Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource _staticSiteUserProvidedFunctionEnvelopeBody = new Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.StaticSiteUserProvidedFunctionAppArmResource();
+
         /// <summary>when specified, runs this cmdlet as a PowerShell job</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Run the command as a job")]
         [global::Microsoft.Azure.PowerShell.Cmdlets.Websites.Category(global::Microsoft.Azure.PowerShell.Cmdlets.Websites.ParameterCategory.Runtime)]
@@ -109,7 +112,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         Description = @"The region of the function app registered with the static site",
         SerializedName = @"functionAppRegion",
         PossibleTypes = new [] { typeof(string) })]
-        public string FunctionAppRegion { get => StaticSiteUserProvidedFunctionEnvelopeBody.FunctionAppRegion ?? null; set => StaticSiteUserProvidedFunctionEnvelopeBody.FunctionAppRegion = value; }
+        public string FunctionAppRegion { get => _staticSiteUserProvidedFunctionEnvelopeBody.FunctionAppRegion ?? null; set => _staticSiteUserProvidedFunctionEnvelopeBody.FunctionAppRegion = value; }
 
         /// <summary>The resource id of the function app registered with the static site</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "The resource id of the function app registered with the static site")]
@@ -120,7 +123,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         Description = @"The resource id of the function app registered with the static site",
         SerializedName = @"functionAppResourceId",
         PossibleTypes = new [] { typeof(string) })]
-        public string FunctionAppResourceId { get => StaticSiteUserProvidedFunctionEnvelopeBody.FunctionAppResourceId ?? null; set => StaticSiteUserProvidedFunctionEnvelopeBody.FunctionAppResourceId = value; }
+        public string FunctionAppResourceId { get => _staticSiteUserProvidedFunctionEnvelopeBody.FunctionAppResourceId ?? null; set => _staticSiteUserProvidedFunctionEnvelopeBody.FunctionAppResourceId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -146,14 +149,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         Description = @"Kind of resource.",
         SerializedName = @"kind",
         PossibleTypes = new [] { typeof(string) })]
-        public string Kind { get => StaticSiteUserProvidedFunctionEnvelopeBody.Kind ?? null; set => StaticSiteUserProvidedFunctionEnvelopeBody.Kind = value; }
+        public string Kind { get => _staticSiteUserProvidedFunctionEnvelopeBody.Kind ?? null; set => _staticSiteUserProvidedFunctionEnvelopeBody.Kind = value; }
 
         /// <summary>
-        /// <see cref="IEventListener" /> cancellation delegate. Stops the cmdlet when called.
+        /// <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener" /> cancellation delegate. Stops the cmdlet when called.
         /// </summary>
         global::System.Action Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener.Cancel => _cancellationTokenSource.Cancel;
 
-        /// <summary><see cref="IEventListener" /> cancellation token.</summary>
+        /// <summary><see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener" /> cancellation token.</summary>
         global::System.Threading.CancellationToken Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener.Token => _cancellationTokenSource.Token;
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
@@ -213,14 +216,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         [global::Microsoft.Azure.PowerShell.Cmdlets.Websites.Category(global::Microsoft.Azure.PowerShell.Cmdlets.Websites.ParameterCategory.Path)]
         public string ResourceGroupName { get => this._resourceGroupName; set => this._resourceGroupName = value; }
 
-        /// <summary>
-        /// Backing field for <see cref="StaticSiteUserProvidedFunctionEnvelopeBody" /> property.
-        /// </summary>
-        private Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource _staticSiteUserProvidedFunctionEnvelopeBody= new Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.StaticSiteUserProvidedFunctionAppArmResource();
-
-        /// <summary>Static Site User Provided Function App ARM resource.</summary>
-        private Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource StaticSiteUserProvidedFunctionEnvelopeBody { get => this._staticSiteUserProvidedFunctionEnvelopeBody; set => this._staticSiteUserProvidedFunctionEnvelopeBody = value; }
-
         /// <summary>Backing field for <see cref="SubscriptionId" /> property.</summary>
         private string _subscriptionId;
 
@@ -246,8 +241,8 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         /// happens on that response. Implement this method in a partial class to enable this behavior
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse"
-        /// /> from the remote call</param>
+        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse">Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse</see>
+        /// from the remote call</param>
         /// <param name="returnNow">/// Determines if the rest of the onDefault method should be processed, or if the method should
         /// return immediately (set to true to skip further processing )</param>
 
@@ -258,8 +253,8 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         /// on that response. Implement this method in a partial class to enable this behavior
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource"
-        /// /> from the remote call</param>
+        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource">Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource</see>
+        /// from the remote call</param>
         /// <param name="returnNow">/// Determines if the rest of the onOk method should be processed, or if the method should return
         /// immediately (set to true to skip further processing )</param>
 
@@ -270,6 +265,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         /// </summary>
         protected override void BeginProcessing()
         {
+            var telemetryId = Microsoft.Azure.PowerShell.Cmdlets.Websites.Module.Instance.GetTelemetryId.Invoke();
+            if (telemetryId != "" && telemetryId != "internal")
+            {
+                __correlationId = telemetryId;
+            }
             Module.Instance.SetProxyConfiguration(Proxy, ProxyCredential, ProxyUseDefaultCredentials);
             if (Break)
             {
@@ -297,7 +297,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
             clone.ProxyUseDefaultCredentials = this.ProxyUseDefaultCredentials;
             clone.HttpPipelinePrepend = this.HttpPipelinePrepend;
             clone.HttpPipelineAppend = this.HttpPipelineAppend;
-            clone.StaticSiteUserProvidedFunctionEnvelopeBody = this.StaticSiteUserProvidedFunctionEnvelopeBody;
+            clone._staticSiteUserProvidedFunctionEnvelopeBody = this._staticSiteUserProvidedFunctionEnvelopeBody;
             clone.ResourceGroupName = this.ResourceGroupName;
             clone.Name = this.Name;
             clone.EnvironmentName = this.EnvironmentName;
@@ -310,7 +310,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         /// <summary>Performs clean-up after the command execution</summary>
         protected override void EndProcessing()
         {
-            ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Signal(Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.Events.CmdletEndProcessing).Wait(); if( ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
+
         }
 
         /// <summary>Handles/Dispatches events during the call to the REST service.</summary>
@@ -443,7 +443,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         {
             using( NoSynchronizationContext )
             {
-                await ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Signal(Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.Events.CmdletProcessRecordAsyncStart); if( ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 await ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Signal(Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.Events.CmdletGetPipeline); if( ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 Pipeline = Microsoft.Azure.PowerShell.Cmdlets.Websites.Module.Instance.CreatePipeline(InvocationInformation, __correlationId, __processRecordId, this.ParameterSetName);
                 if (null != HttpPipelinePrepend)
@@ -458,12 +457,12 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
                 try
                 {
                     await ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Signal(Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.Events.CmdletBeforeAPICall); if( ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.StaticSitesRegisterUserProvidedFunctionAppWithStaticSiteBuild(ResourceGroupName, Name, EnvironmentName, FunctionAppName, this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?), SubscriptionId, StaticSiteUserProvidedFunctionEnvelopeBody, onOk, onDefault, this, Pipeline);
+                    await this.Client.StaticSitesRegisterUserProvidedFunctionAppWithStaticSiteBuild(ResourceGroupName, Name, EnvironmentName, FunctionAppName, this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?), SubscriptionId, _staticSiteUserProvidedFunctionEnvelopeBody, onOk, onDefault, this, Pipeline);
                     await ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Signal(Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.Events.CmdletAfterAPICall); if( ((Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ResourceGroupName=ResourceGroupName,Name=Name,EnvironmentName=EnvironmentName,FunctionAppName=FunctionAppName,Forced=this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?),SubscriptionId=SubscriptionId,body=StaticSiteUserProvidedFunctionEnvelopeBody})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ResourceGroupName=ResourceGroupName,Name=Name,EnvironmentName=EnvironmentName,FunctionAppName=FunctionAppName,Forced=this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?),SubscriptionId=SubscriptionId,body=_staticSiteUserProvidedFunctionEnvelopeBody})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });
@@ -495,8 +494,8 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
         /// a delegate that is called when the remote service returns default (any response code not handled elsewhere).
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse"
-        /// /> from the remote call</param>
+        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse">Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse</see>
+        /// from the remote call</param>
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the method is completed.
         /// </returns>
@@ -518,14 +517,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
                 {
                     // Unrecognized Response. Create an error record based on what we have.
                     var ex = new Microsoft.Azure.PowerShell.Cmdlets.Websites.Runtime.RestException<Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IDefaultErrorResponse>(responseMessage, await response);
-                    WriteError( new global::System.Management.Automation.ErrorRecord(ex, ex.Code, global::System.Management.Automation.ErrorCategory.InvalidOperation, new { ResourceGroupName=ResourceGroupName, Name=Name, EnvironmentName=EnvironmentName, FunctionAppName=FunctionAppName, Forced=this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?), SubscriptionId=SubscriptionId, body=StaticSiteUserProvidedFunctionEnvelopeBody })
+                    WriteError( new global::System.Management.Automation.ErrorRecord(ex, ex.Code, global::System.Management.Automation.ErrorCategory.InvalidOperation, new { ResourceGroupName=ResourceGroupName, Name=Name, EnvironmentName=EnvironmentName, FunctionAppName=FunctionAppName, Forced=this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?), SubscriptionId=SubscriptionId, body=_staticSiteUserProvidedFunctionEnvelopeBody })
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(ex.Message) { RecommendedAction = ex.Action }
                     });
                 }
                 else
                 {
-                    WriteError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception($"[{code}] : {message}"), code?.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new { ResourceGroupName=ResourceGroupName, Name=Name, EnvironmentName=EnvironmentName, FunctionAppName=FunctionAppName, Forced=this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?), SubscriptionId=SubscriptionId, body=StaticSiteUserProvidedFunctionEnvelopeBody })
+                    WriteError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception($"[{code}] : {message}"), code?.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new { ResourceGroupName=ResourceGroupName, Name=Name, EnvironmentName=EnvironmentName, FunctionAppName=FunctionAppName, Forced=this.InvocationInformation.BoundParameters.ContainsKey("Forced") ? Forced : default(global::System.Management.Automation.SwitchParameter?), SubscriptionId=SubscriptionId, body=_staticSiteUserProvidedFunctionEnvelopeBody })
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(message) { RecommendedAction = global::System.String.Empty }
                     });
@@ -535,8 +534,8 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Websites.Cmdlets
 
         /// <summary>a delegate that is called when the remote service returns 200 (OK).</summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource"
-        /// /> from the remote call</param>
+        /// <param name="response">the body result as a <see cref="Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource">Microsoft.Azure.PowerShell.Cmdlets.Websites.Models.Api20201201.IStaticSiteUserProvidedFunctionAppArmResource</see>
+        /// from the remote call</param>
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the method is completed.
         /// </returns>

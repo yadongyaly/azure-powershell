@@ -75,7 +75,7 @@ Description for Gets the details of the user provided function app registered wi
 Gets Azure Web Apps in the specified resource group.
 
 ### [Get-AzWebAppAccessRestrictionConfig](Get-AzWebAppAccessRestrictionConfig.md)
-Gets Access Restiction configuration for an Azure Web App.
+Gets Access Restriction configuration for an Azure Web App.
 
 ### [Get-AzWebAppBackup](Get-AzWebAppBackup.md)
 

@@ -24,8 +24,9 @@ List webjobs for an app.
 
 ### Example 1: List webjobs for an app
 ```powershell
-Get-AzWebAppWebJob -ResourceGroupName webjob-rg-test -AppName appService-test01 
+Get-AzWebAppWebJob -ResourceGroupName webjob-rg-test -AppName appService-test01
 ```
+
 ```output
 Name                               Kind WebJobType
 ----                               ---- ----------
