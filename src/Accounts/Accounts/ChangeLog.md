@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 2.9.2
 * Supported returning all subscriptions with specified name while using `Get-AzSubscription` with parameter `SubscriptionName`. [#19295]
 
 ## Version 2.9.1
